@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>点餐系统</title>
+    <link rel="stylesheet" type="text/css" href="src/lib/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="src/style/common.css" />
+    <link rel="stylesheet" type="text/css" href="src/lib/bootstrap/js/bootstrap.js" />
+    <script type="text/javascript" src="src/lib/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="src/lib/fly.js"></script>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <style type="text/css">
+       body,html{
+            height: 100%;
+       }
+        #app{
+            height: 100%;
+            display:flex;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+    
+    </div>
+    <script src="/dist/build.js"></script>
+    <script type="text/javascript">
+        // 把尺寸放大N倍（N是window.devicePixelRatio）
+        var wd = document.documentElement.clientWidth*window.devicePixelRatio/10;
+        //物理像素*设备像素比=真实像素
+        document.getElementsByTagName("html")[0].style.fontSize = wd + "px";
+        // 把屏幕的倍率缩小到N分之一（N是window.devicePixelRatio）
+        var scale = 1/window.devicePixelRatio;
+        var mstr = 'initial-scale='+ scale +', maximum-scale='+ scale +', minimum-scale='+ scale +', user-scalable=no';
+        // document.getElementById("vp").content = mstr;
+    </script>
+  </body>
+</html>

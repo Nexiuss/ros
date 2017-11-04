@@ -1,0 +1,33 @@
+.home{
+    height: 100%;
+    background-color: #fff;
+  }
+  .el-header {
+    background-color: #eff2f7;
+    color: #333;
+    text-align: center;
+    line-height: 60px;
+  }
+  
+  .el-aside {
+    background-color: #D3DCE6;
+    color: #333;
+    text-align: center;
+    line-height: 200px;
+    height:100%;
+  }
+  
+  .el-main {
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    line-height: 160px;
+  }
+  
+  body > .el-container {
+    margin-bottom: 40px;
+  }
+  
+  .el-container:nth-child(6) .el-aside {
+    line-height: 260px;
+  }

@@ -1,0 +1,26 @@
+{
+  "name": "smm",
+  "version": "1.0.0",
+  "description": "餐馆点餐系统",
+  "main": "server.js",
+  "scripts": {
+    "test": "smm",
+    "start": "node server.js"
+  },
+  "author": "pjp、liu、su",
+  "license": "ISC",
+  "devDependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "gulp": "^3.9.1",
+    "http-server": "^0.10.0",
+    "jsonwebtoken": "^8.1.0",
+    "mongodb": "^2.2.33",
+    "multer": "^1.3.0",
+    "mysql": "^2.15.0",
+    "socket.io": "^2.0.3",
+    "ws": "^3.2.0"
+  }
+}
