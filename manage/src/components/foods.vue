@@ -58,7 +58,7 @@
     </div>
     <div class="page">
       <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange"
-                     :current-page="currentIndex" :page-size="5" layout="total,sizes,prev,pager,next,jumper"
+                     :current-page="currentIndex" :page-size="pagesize" :page-sizes="[10, 20, 50, 100]" layout="total,sizes,prev,pager,next,jumper"
                      :total="total">
       </el-pagination>
     </div>
@@ -139,8 +139,8 @@
         dialogFormVisible: false,
         formLabelWidth: '80px',
         form: {},
-        currentIndex: 0,
-        total: 0
+        currentIndex: 1,
+        pagesize: 10
       }
     },
     created () {
@@ -172,7 +172,6 @@
             attr:attr
           }
         }).then(res => {
-           // this.total = res.body.count
            console.log(res)
         })
         this.dialogFormVisible = false
@@ -209,13 +208,12 @@
       cancel () {
         this.dialogFormVisible = false
       },
-      handleSizeChange (pageSize) {
-        this.pageSize = pageSize
-
+      handleSizeChange (size) {
+        this.pagesize = size
         // console.log(`每页 ${val} 条`)
       },
-      handleCurrentChange (pageIndex) {
-        this.pageIndex = pageIndex
+      handleCurrentChange (currentIndex) {
+        this.currentIndex = currentIndex
         // console.log(`当前页: ${val}`)
       }
     },
@@ -224,8 +222,10 @@
       http.post({
         url: 'foodsFind'
       }).then(res => {
-        self.tableData = res.data.data;
-        // console.log(self.total)
+        self.tableData = res.data.data
+        self.total = res.data.data.length
+        
+        // console.log(self.tableData)
       })
     }
   }

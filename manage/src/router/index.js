@@ -7,6 +7,7 @@ import FoodComponent from '../components/foods.vue'
 import OrderComponent from '../components/order.vue'
 import UserComponent from '../components/user.vue'
 import AddFoodComponent from '../components/addFood.vue'
+import AddUserComponent from '../components/adduser.vue'
 
 
 Vue.use(VueRouter)
@@ -41,6 +42,11 @@ export default new VueRouter({
         name: 'addfood',
         component: AddFoodComponent,
         meta: ['添加菜品']
+      }, {
+        path: 'adduser',
+        name: 'adduser',
+        component: AddUserComponent,
+        meta: ['新增员工']
       }]
     }
   ]

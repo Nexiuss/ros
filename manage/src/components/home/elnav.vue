@@ -38,6 +38,10 @@
             <i class="el-icon-edit-outline"></i>
             <span slot="title">添加菜品</span>
           </el-menu-item>
+          <el-menu-item index="/home/adduser">
+            <i class="el-icon-circle-plus-outline"></i>
+            <span slot="title">新增员工</span>
+          </el-menu-item>
         </el-menu>
       </el-col>
     </el-row>
@@ -57,6 +61,7 @@
 
 <script>
   export default {
+    props: ['router'],
     methods: {
       handleOpen (key, keyPath) {
         console.log(key, keyPath)

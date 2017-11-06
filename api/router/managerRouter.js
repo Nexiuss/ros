@@ -21,7 +21,7 @@ module.exports = {
 			}
 		}));
 		app.post("/register", function(request, response){
-			var sql = `select * from user where user_name = '${request.body.name}'`;
+			var sql = "select * from user where user_name = '"+request.body.user_name+"'";
 			db.dataControl(sql, function(result){
 				if(result.status == false){
 					response.send({status: 2,msg:result.msg});
@@ -29,7 +29,8 @@ module.exports = {
 					if(result.data.length > 0){
 						response.send({status:0,msg: '用户已存在'});
 					}else {
-						var sql = `insert into user (user_name, password, status) values ('${request.body.name}', '${request.body.password}', '${request.body.status}')`;
+						// var sql = "insert into user (user_name, password, status) values ('"+request.body.user_name+"', '"+request.body.password+"', '"+request.body.status+"')";
+						var sql = `insert into user (user_name, password, status) values ('${request.body.user_name}', '${request.body.password}', '${request.body.status}')`;
 						db.dataControl(sql, function(res){
 							if(result.status == false){
 								response.send({msg:result.msg});
