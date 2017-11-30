@@ -51,9 +51,10 @@
 </template>
 <style>
   .addFood{
-     width:40%;
+     width:50%;
      margin:20px 100px;
      height: 100%;
+     text-align:left;
   }
   .avatar-uploader .el-upload {
     border: 1px dashed #d9d9d9;
